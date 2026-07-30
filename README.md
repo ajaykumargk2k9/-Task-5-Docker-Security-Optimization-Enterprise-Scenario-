@@ -221,5 +221,39 @@ trivy --version
 
 ---
 
+# Runtime Security
 
+Imagine our Node.js application has a bug that causes an infinite loop.
+
+If we don't set CPU or memory limits one container can consume all system resources and affect other applications on the same server.
+
+Runtime security prevents that.
+
+# Step 1: Update docker-compose.yml
+
+We'll also make your services more secure by adding runtime settings.
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/docker%20yml%20updation%20.png?raw=true)
+
+---
+
+# Step 2: Rebuild and start the services:
+
+docker compose down
+
+docker compose up --build -d
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/Deleted%20existing%20containers.png?raw=true)
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/Created%20a%20containers.png?raw=true)
+
+---
+
+# Step 3: Check the running containers:
+
+docker compose ps
+
+If everything starts successfully our runtime security settings are working.
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/Verify%20the%20containers%20.png?raw=true)
 
