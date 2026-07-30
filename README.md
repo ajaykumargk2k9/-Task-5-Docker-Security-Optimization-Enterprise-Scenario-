@@ -20,4 +20,41 @@ The development team has built a Node.js application and everything works. Befor
 
 •	❌ Production deployment is rejected 
 
-Your task is to fix these issues without breaking the application.
+---
+
+# Analyze Our Current Docker Image
+
+# Step 1: Open the Employee Service Folder
+
+From your current terminal:
+
+Navigate to the employee service 
+
+Run: cd employee-service
+
+---
+
+# Step 2: Build the Existing Docker Image
+
+Run: docker build -t employee-service:before .
+
+---
+
+# Step 3: Check the Image Size
+
+Run: docker images
+
+---
+
+# Step 4: Inspect the Image Layers
+
+Run: docker history employee-service:before
+
+---
+
+# Step 5: Check Which User Runs the Container
+
+Run: docker run --rm employee-service:before whoami
+
+
+
