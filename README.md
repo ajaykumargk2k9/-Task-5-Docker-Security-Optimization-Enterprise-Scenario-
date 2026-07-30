@@ -257,3 +257,31 @@ If everything starts successfully our runtime security settings are working.
 
 ![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/Verify%20the%20containers%20.png?raw=true)
 
+
+---
+
+# Docker Scout
+
+Analyze Docker image using Docker Scout.
+
+Docker Scout is Docker's official image analysis and security tool.
+
+Verify Docker Scout
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/docker%20scout.png?raw=true)
+
+---
+
+It provides a high-level security summary of our Docker image instead of listing every vulnerability.
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/High%20level%20security%20summary.png?raw=true)
+
+---
+
+Command scans our Docker image and displays all known security vulnerabilities (CVEs) found in the packages inside the image.
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/docker%20vulnerabilities.png?raw=true)
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/docker%20vulnerabilities%20extension.png?raw=true)
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/docker%20vulnerabilities%20extension2%20.png?raw=true)
