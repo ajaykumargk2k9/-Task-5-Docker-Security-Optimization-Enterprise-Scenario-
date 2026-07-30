@@ -72,7 +72,7 @@ Run: docker run --rm employee-service:before whoami
 
 # Docker Image Optimization
 
-Use Alpine Linux, Replace: FROM node:22
+# Step 1: Use Alpine Linux, Replace: FROM node:22
 
 with: FROM node:22-alpine
 
@@ -82,7 +82,7 @@ Update the Dockerfile and save the changes
 
 ---
 
-Create a .dockerignore
+# Step 2: Create a .dockerignore
 
 Create a file named: .dockerignore
 
@@ -92,13 +92,13 @@ Add:
 
 ![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/dockerignore.png?raw=true)
 
-Build the New Image
+# Step 3: Build the New Image
 
 docker build -t employee-service:optimized .
 
 ![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/optimized%20docker%20build.png?raw=true)
 
-Check the Image Size
+# Step 4: Check the Image Size
 
 docker images
 
@@ -110,7 +110,7 @@ employee-service:optimized
 
 ![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/optimized%20docker%20images.png?raw=true)
 
-Check Image History
+# Step 5: Check Image History
 
 docker history employee-service:optimized
 
