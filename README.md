@@ -285,3 +285,95 @@ Command scans our Docker image and displays all known security vulnerabilities (
 ![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/docker%20vulnerabilities%20extension.png?raw=true)
 
 ![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/docker%20vulnerabilities%20extension2%20.png?raw=true)
+
+---
+
+# Reverse Proxy Failure Validation (Employee Service)
+
+# Step 1: Start All Containers
+
+Open the terminal in the project root:
+
+employee-management-system/
+
+Run: docker compose up --build -d
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/reverse%20proxy%20failure%20docker%20compose.PNG?raw=true)
+
+---
+
+# Step 2: Verify Containers
+
+Run: docker compose ps
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/reverse%20proxy%20failure%20docker%20compose%20ps.PNG?raw=true)
+
+---
+
+# Step 3: Verify the Employee Service
+
+nginx.conf contains:
+
+location /employees {
+    proxy_pass http://employee-service:3001;
+}
+
+Open:
+
+http://localhost/employees
+
+The Employee Service response should be displayed.
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/reverse%20proxy%20failure%20nginx.conf.PNG?raw=true)
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/Reverse%20proxy%20failure%20employee%20service%20respone.PNG?raw=true)
+
+---
+
+# Step 4: Stop Employee Service
+
+Notice that NGINX is still running.
+
+Run: docker compose stop employee-service
+
+Verify: docker compose ps
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/reverse%20proxy%20failure%20docker%20stop.PNG?raw=true)
+
+---
+
+# Step 5: Validate Reverse Proxy Failure
+
+Refresh: http://localhost/employees
+
+Expected:
+
+502 Bad Gateway
+
+nginx
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/reverse%20proxy%20failure%20502.PNG?raw=true)
+
+---
+
+# Step 6: Restart Employee Service
+
+Run: docker compose start employee-service
+
+Verify:
+
+docker compose ps 
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/reverse%20proxy%20failure%20restart.PNG?raw=true)
+
+---
+
+# Step 7: Validate Recovery
+
+Refresh: http://localhost/employees
+
+The Employee Service should respond again.
+
+Notice that NGINX was never restarted.
+
+![image alt](https://github.com/ajaykumargk2k9/-Task-5-Docker-Security-Optimization-Enterprise-Scenario-/blob/main/Reverse%20proxy%20failure%20employee%20service%20respone.PNG?raw=true)
